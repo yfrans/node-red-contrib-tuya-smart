@@ -7,6 +7,7 @@ export interface TuyaSmartProperties extends NodeProperties {
     deviceName: string;
     request: string;
     pollingInterval: number;
+    protocolVersion: string;
 }
 
 export interface TuyaSmartNode extends Node {
@@ -16,6 +17,7 @@ export interface TuyaSmartNode extends Node {
     deviceName: string;
     request: string;
     pollingInterval: number;
+    protocolVersion: string;
 }
 
 /**

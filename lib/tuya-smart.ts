@@ -15,6 +15,7 @@ export = (RED: Red) => {
         this.deviceIp = properties.deviceIp;
         this.pollingInterval = properties.pollingInterval;
         this.request = JSON.parse(properties.request);
+        this.protocolVersion = properties.protocolVersion;
 
         node.status({ fill:"yellow", shape:"ring", text: "connecting"});
         let indicateConnectionOk = () => node.status({ fill:"green", shape:"ring", text: "connected"});
@@ -109,7 +110,8 @@ export = (RED: Red) => {
         let deviceOptions = {
             id: node.deviceId,
             key: node.deviceKey,
-            ip: node.deviceIp
+            ip: node.deviceIp,
+            version: node.protocolVersion
         };
         let smartDevice = new TuyaDevice(deviceOptions);
 
